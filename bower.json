@@ -1,13 +1,9 @@
 {
   "name": "restaurantinspections",
   "homepage": "https://github.com/BayoAdejare/restaurantinspections",
-  "authors": [
-    "Anshul Goel <anshul.goel@priceline.com>"
-  ],
+  "authors": [],
   "description": "NYC Restaurant Inspection",
-  "main": "",
   "moduleType": [],
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
