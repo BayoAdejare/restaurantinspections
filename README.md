@@ -1,2 +1,2 @@
-# guitartunerhack
-A program to tune a guitar
+# Restaurant Inspections
+Checkout if your favorite restaurant passed its inspection.
