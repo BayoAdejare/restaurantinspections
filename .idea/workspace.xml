@@ -70,21 +70,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restaurant/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.58093524">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1456046788205" expanded="true" signature="814:843" placeholder="SELECT CAMIS... RESTAURANTS" />
-                <marker date="1456046788205" expanded="true" signature="814:1854" placeholder="SELECT a.CAM... CAMIS" />
-                <marker date="1456046788205" expanded="true" signature="814:1858" placeholder="SELECT a.CAM... CAMIS" />
-                <marker date="1456046788205" expanded="true" signature="954:1663" placeholder="SELECT aa.CA... RESTAURANTS" />
-                <marker date="1456046788205" expanded="true" signature="1282:1534" placeholder="SELECT DT FR... CAMIS" />
-                <marker date="1456046788205" expanded="true" signature="1298:1502" placeholder="SELECT CAMIS... RESTAURANTS" />
-                <marker date="1456046788205" expanded="true" signature="1298:1533" placeholder="SELECT CAMIS... RESTAURANTS" />
-                <marker date="1456046788205" expanded="true" signature="1724:1776" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="814:843" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="814:1854" placeholder="SELECT a.CAM... CAMIS" />
+                <marker date="1456053847140" expanded="true" signature="814:1858" placeholder="SELECT a.CAM... CAMIS" />
+                <marker date="1456053847140" expanded="true" signature="954:1663" placeholder="SELECT aa.CA... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1282:1534" placeholder="SELECT DT FR... CAMIS" />
+                <marker date="1456053847140" expanded="true" signature="1298:1502" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1298:1533" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1724:1776" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1999:2387" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1999:2388" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1999:2400" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="1999:2425" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847140" expanded="true" signature="2430:2431" placeholder="SELECT CAMIS... RESTAURANTS" />
               </folding>
             </state>
           </provider>
@@ -105,14 +110,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restaurant/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27517986">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1456046975063" expanded="true" signature="259:366" placeholder="SELECT CAMIS... RESTAURANTS" />
+                <marker date="1456053847135" expanded="true" signature="307:383" placeholder="SELECT CAMIS... RESTAURANTS" />
               </folding>
             </state>
           </provider>
@@ -657,7 +662,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456041459567</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sdkajn">
+      <created>1456047489528</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1456047489528</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -738,7 +749,7 @@
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1456046975063" expanded="true" signature="259:366" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847135" expanded="true" signature="307:383" placeholder="SELECT CAMIS... RESTAURANTS" />
           </folding>
         </state>
       </provider>
@@ -811,24 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurant/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1456046788205" expanded="true" signature="814:843" placeholder="SELECT CAMIS... RESTAURANTS" />
-            <marker date="1456046788205" expanded="true" signature="814:1854" placeholder="SELECT a.CAM... CAMIS" />
-            <marker date="1456046788205" expanded="true" signature="814:1858" placeholder="SELECT a.CAM... CAMIS" />
-            <marker date="1456046788205" expanded="true" signature="954:1663" placeholder="SELECT aa.CA... RESTAURANTS" />
-            <marker date="1456046788205" expanded="true" signature="1282:1534" placeholder="SELECT DT FR... CAMIS" />
-            <marker date="1456046788205" expanded="true" signature="1298:1502" placeholder="SELECT CAMIS... RESTAURANTS" />
-            <marker date="1456046788205" expanded="true" signature="1298:1533" placeholder="SELECT CAMIS... RESTAURANTS" />
-            <marker date="1456046788205" expanded="true" signature="1724:1776" placeholder="SELECT CAMIS... RESTAURANTS" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/47751af2/f54c72ee-6f3c-4d46-bdb6-64b27a31db67/RESTAURANTS">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -844,11 +837,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restaurant/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27517986">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1456046975063" expanded="true" signature="259:366" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847135" expanded="true" signature="307:383" placeholder="SELECT CAMIS... RESTAURANTS" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restaurant/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58093524">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1456053847140" expanded="true" signature="814:843" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="814:1854" placeholder="SELECT a.CAM... CAMIS" />
+            <marker date="1456053847140" expanded="true" signature="814:1858" placeholder="SELECT a.CAM... CAMIS" />
+            <marker date="1456053847140" expanded="true" signature="954:1663" placeholder="SELECT aa.CA... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1282:1534" placeholder="SELECT DT FR... CAMIS" />
+            <marker date="1456053847140" expanded="true" signature="1298:1502" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1298:1533" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1724:1776" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1999:2387" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1999:2388" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1999:2400" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="1999:2425" placeholder="SELECT CAMIS... RESTAURANTS" />
+            <marker date="1456053847140" expanded="true" signature="2430:2431" placeholder="SELECT CAMIS... RESTAURANTS" />
           </folding>
         </state>
       </provider>

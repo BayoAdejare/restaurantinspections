@@ -4,7 +4,6 @@ from django.db import connection
 # Create your models here.
 
 
-
 class Universe(models.Model):
     camis = models.IntegerField(db_column='CAMIS', primary_key=True)
     dba = models.CharField(max_length=200)
@@ -18,6 +17,7 @@ class Universe(models.Model):
     grade = models.CharField(max_length=2)
     grade_date = models.CharField(max_length=500)
     violation_count = models.IntegerField()
+
 
     def get_univ_ids(self):
         cursor = connection.cursor()
@@ -37,6 +37,23 @@ class Universe(models.Model):
              LEFT OUTER JOIN
              (SELECT CAMIS,INSPECTION_DATE, GRADE FROM RESTAURANTS ) c
              on c.CAMIS=a.CAMIS and a.INSPECTION_DATE = c.INSPECTION_DATE''')
+        row = cursor.fetchall()
+        return row
+
+    def get_univ_hist(self,id):
+        cursor = connection.cursor()
+        query = '''SELECT CAMIS,
+                       DBA,
+                       CUISINE_DESCRIPTION,
+                       INSPECTION_DATE,
+                       ACTION,
+                       VIOLATION_CD,
+                       VIOLATION_DESC,
+                       CRITICAL_FLAG,
+                       GRADE,
+                       GRADE_DATE
+                       FROM RESTAURANTS WHERE CAMIS = ''' + str(id)
+        cursor.execute(query)
         row = cursor.fetchall()
         return row
 

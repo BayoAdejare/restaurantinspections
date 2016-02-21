@@ -7,6 +7,6 @@ from restaurant.models import Universe
 def index(request):
     template = loader.get_template('restaurant/index.html')
 
-    Universe.get_univ_ids(Universe)
+    print(Universe.get_univ_hist(Universe,40356018))
     context = {}
     return HttpResponse(template.render(context, request))
