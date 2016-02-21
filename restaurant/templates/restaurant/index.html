@@ -27,13 +27,13 @@
                 center: myLatLng,
                 zoom: 16
             });
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-				icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-				animation: google.maps.Animation.DROP,
-                title: 'We are Here!'
-            });
+            //var marker = new google.maps.Marker({
+              //  position: myLatLng,
+             //   map: map,
+				//icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+			//	animation: google.maps.Animation.DROP,
+              //  title: 'We are Here!'
+           // });
         }
         angular.module('drexel.restaurant', [])
                 .controller('MainController', [
@@ -48,16 +48,15 @@
                         $scope.address = '3141 Chestnut St, Philadelphia, PA 19104';
                         var partial_url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDXWbq6TMWCforCr444wFzwhnm2O1DgZbs&address=';
                         var url = partial_url + $scope.address.replace(' ', '+');
-						console.log(url);
                         $http.get(url).then(
                                 function(response) {
                                     if (response.data.results) {
-                                        window.latitude = response.data.results[0].geometry.location.lat;
-                                        window.longitude = response.data.results[0].geometry.location.lng;
+                                        window.latitude = window.Math.round(response.data.results[0].geometry.location.lat*1000)/1000;
+                                        window.longitude = window.Math.round(response.data.results[0].geometry.location.lng*1000)/1000;
 										window.marker=new window.google.maps.Marker({
 											position: new window.google.maps.LatLng(window.latitude,window.longitude),
 											animation: window.google.maps.Animation.DROP,
-											title: "I DID IT!"
+											title: "Drexel University"
 										});
 										window.marker.setMap(window.map);
                                     } else {
