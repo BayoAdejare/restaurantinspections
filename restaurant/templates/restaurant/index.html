@@ -15,17 +15,20 @@
         }
     </style>
     <script>
-        var latitude = 39.9565;
-        var longitude = -75.1900;
+        var latitude = 40.7127;
+        var longitude = -74.0059;
 		var map;
 		var marker;
-
+		//var List ={{ List|safe }};
+		var List=[['1007 Morris Park Ave, Bronx, NY 10462','Morris Park Bike Shop','02/09/2015','A'],['469 Flatbrush Ave, Brooklyn, NY 11225','Wendy\'s','05/072015','A'],['351 West 57 street, Manhattan, NY 100190','DJ Reynolds Pub and Restaurant','09/21/2015','A']];
+		var string;
+		var count=0;
         function initMap() {
             var myLatLng = {lat: latitude, lng: longitude};
             var mapDiv = document.getElementById('map');
             map = new google.maps.Map(mapDiv, {
                 center: myLatLng,
-                zoom: 16
+                zoom: 10
             });
             //var marker = new google.maps.Marker({
               //  position: myLatLng,
@@ -45,31 +48,34 @@
                             $http,
                             $q
                     ) {
-                        $scope.address = '3141 Chestnut St, Philadelphia, PA 19104';
-                        var partial_url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDXWbq6TMWCforCr444wFzwhnm2O1DgZbs&address=';
-                        var url = partial_url + $scope.address.replace(' ', '+');
-                        $http.get(url).then(
-                                function(response) {
-                                    if (response.data.results) {
-                                        window.latitude = window.Math.round(response.data.results[0].geometry.location.lat*1000)/1000;
-                                        window.longitude = window.Math.round(response.data.results[0].geometry.location.lng*1000)/1000;
-										window.marker=new window.google.maps.Marker({
-											position: new window.google.maps.LatLng(window.latitude,window.longitude),
-											animation: window.google.maps.Animation.DROP,
-											title: "Drexel University"
-										});
-										window.marker.setMap(window.map);
-                                    } else {
-                                        window.latitude = 39.9565;
-                                        window.longitude = -75.1900;
-                                    }
-                                },
-                                function() {
-                                    window.latitude = 39.9565;
-                                    window.longitude = -75.1900;
-                                }
-                        );
-                    }
+						for(var i=0;i<window.List.length;i++){
+							$scope.address = window.List[i][0];
+							var partial_url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDXWbq6TMWCforCr444wFzwhnm2O1DgZbs&address=';
+							var url = partial_url + $scope.address.replace(' ', '+');
+							$http.get(url).then(
+									function(response) {
+										if (response.data.results) {
+											window.latitude = window.Math.round(response.data.results[0].geometry.location.lat*1000)/1000;
+											window.longitude = window.Math.round(response.data.results[0].geometry.location.lng*1000)/1000;
+											window.marker= new window.google.maps.Marker({
+												position: new window.google.maps.LatLng(window.latitude,window.longitude),
+												animation: window.google.maps.Animation.DROP,
+												title: window.List[window.count][1]+' '+window.List[window.count][2]+' '+window.List[window.count][3]
+											});
+											window.marker.setMap(window.map);
+											window.count=window.count+1;
+										} else {
+											window.latitude = 39.9565;
+											window.longitude = -75.1900;
+										}
+									},
+									function() {
+										window.latitude = 39.9565;
+										window.longitude = -75.1900;
+									}
+							)
+						}
+					}
                 ])
     </script>
 </head>
