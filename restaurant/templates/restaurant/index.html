@@ -48,7 +48,7 @@
                             $http,
                             $q
                     ) {
-						for(var i=0;i<window.List.length;i++){
+						for(var i=0;i<window.List.length;i=i+1){
 							$scope.address = window.List[i][0];
 							var partial_url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDXWbq6TMWCforCr444wFzwhnm2O1DgZbs&address=';
 							var url = partial_url + $scope.address.replace(' ', '+');
