@@ -21,9 +21,8 @@ class Universe(models.Model):
 
     def get_univ_ids(self):
         cursor = connection.cursor()
-        cursor.execute('''SELECT DISTINCT a.CAMIS,a.DBA,a.address, a.CUISINE_DESCRIPTION,
-            a.INSPECTION_DATE,a.VIOLATION_COUNT, c.GRADE FROM
-             (SELECT aa.CAMIS,aa.DBA,(aa.BUILDING||' '||aa.STREET||' '||aa.ZIPCODE) as address, aa.CUISINE_DESCRIPTION,
+        cursor.execute('''SELECT DISTINCT a.address, a.DBA, a.INSPECTION_DATE,c.GRADE  FROM
+             (SELECT aa.CAMIS,aa.DBA,(aa.BUILDING||' '||trim(aa.STREET)||', '||aa.BORO||', NY '||aa.ZIPCODE) as address, aa.CUISINE_DESCRIPTION,
             aa.INSPECTION_DATE,COUNT(aa.VIOLATION_CD) as VIOLATION_COUNT FROM RESTAURANTS aa
             WHERE substr(aa.INSPECTION_DATE,7,4)||substr(aa.INSPECTION_DATE,1,2)||substr(aa.INSPECTION_DATE,4,2) =
              (SELECT DT FROM (SELECT CAMIS,
