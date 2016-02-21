@@ -6,6 +6,7 @@
     <title>Restaurant Inspection</title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <style>
         #map {
             width: 100%;
@@ -13,72 +14,109 @@
             background-color: #CCC;
         }
     </style>
+    <script>
+
+        var latitude = 39.9565;
+        var longitude = -75.1900;
+
+        function initMap() {
+            var myLatLng = {lat: latitude, lng: longitude};
+            var mapDiv = document.getElementById('map');
+            var map = new google.maps.Map(mapDiv, {
+                center: myLatLng,
+                zoom: 16
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'We are Here!'
+            });
+        }
+
+        angular.module('drexel.restaurant', [])
+                .controller('MainController', [
+                        '$scope',
+                        '$http',
+                        '$q',
+                    function(
+                            $scope,
+                            $http,
+                            $q
+                    ) {
+                        $scope.address = '3141 Chestnut St, Philadelphia, PA 19104';
+                        var partial_url = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDXWbq6TMWCforCr444wFzwhnm2O1DgZbs&address=';
+                        var url = partial_url + $scope.address.replace(' ', '+');
+
+                        $http.get(url).then(
+                                function(response) {
+                                    if (response.data.results) {
+                                        window.latitude = response.data.results[0].geometry.location.lat;
+                                        window.longitude = response.data.results[0].geometry.location.lng;
+                                    } else {
+                                        window.latitude = 39.9565;
+                                        window.longitude = -75.1900;
+                                    }
+                                },
+                                function() {
+                                    window.latitude = 39.9565;
+                                    window.longitude = -75.1900;
+                                }
+                        );
+                    }
+                ])
+    </script>
 </head>
-<body ng-app>
-<header>
-
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu">
-                <li><a href="#">One</a></li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
-                <li><a href="#">Four</a></li>
-            </ul>
+<body ng-app="drexel.restaurant">
+<div ng-controller="MainController">
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                    <li><a href="#">Four</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><input type="search" placeholder="Search" ng-model="address"></li>
+                    <li><button type="button" class="button">Search</button></li>
+                </ul>
+            </div>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input type="search" placeholder="Search"></li>
-                <li><button type="button" class="button">Search</button></li>
-            </ul>
+
+    </header>
+    <br>
+    <div class="row">
+        <div class="medium-8 columns">
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+            <!--<p><img src="http://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>-->
+        </div>
+        <div class="medium-4 columns">
+            <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image" alt="advertisement for deep fried Twinkies"></p>
+            <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image"></p>
         </div>
     </div>
 
-</header>
-<br>
-<div class="row">
-    <div class="medium-8 columns">
-        <div id="map"></div>
-        <script>
-            function initMap() {
-			var myLatLng = {lat: 39.9565, lng: -75.1900};
-                var mapDiv = document.getElementById('map');
-                var map = new google.maps.Map(mapDiv, {
-                    center: myLatLng,
-                    zoom: 16
-                });
-				var marker = new google.maps.Marker({
-					position: myLatLng,
-					map: map,
-					title: 'We are Here!'
-				});
-            }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-        <!--<p><img src="http://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>-->
-    </div>
-    <div class="medium-4 columns">
-        <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image" alt="advertisement for deep fried Twinkies"></p>
-        <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image"></p>
-    </div>
+    <footer>
+        <hr>
+        <div class="row expanded">
+            <div class="medium-6 columns">
+                <ul class="menu">
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Partner</a></li>
+                    <li><a href="#">Explore</a></li>
+                </ul>
+            </div>
+            <div class="medium-6 columns">
+                <ul class="menu align-right">
+                    <li class="menu-text">Copyright © 2099 Random Mag</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </div>
-
-<footer>
-    <hr>
-    <div class="row expanded">
-        <div class="medium-6 columns">
-            <ul class="menu">
-                <li><a href="#">Legal</a></li>
-                <li><a href="#">Partner</a></li>
-                <li><a href="#">Explore</a></li>
-            </ul>
-        </div>
-        <div class="medium-6 columns">
-            <ul class="menu align-right">
-                <li class="menu-text">Copyright © 2099 Random Mag</li>
-            </ul>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
