@@ -63,3 +63,10 @@ target/
 
 bower_components
 .idea
+
+settings.py
+*.pyc
+
+# Database
+*.db
+*.sqlite3
